@@ -6,11 +6,11 @@
     <title>Ronaldo Mamani Quispe - Página Personal</title>
     <style>
         :root {
-            --primary-color: #2d3748;
-            --secondary-color: #4a5568;
-            --accent-color: #3182ce;
-            --light-color: #f7fafc;
-            --dark-color: #1a202c;
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #34495e;
         }
         
         * {
@@ -21,44 +21,33 @@
         }
         
         body {
-            background-color: var(--light-color);
-            color: var(--dark-color);
+            background-color: #f9f9f9;
+            color: #333;
             line-height: 1.6;
         }
         
         header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
             color: white;
-            padding: 2rem 1rem;
+            padding: 2rem 0;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         
         .container {
+            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1rem;
+            padding: 0 15px;
         }
         
-        .profile {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-        
-        .avatar {
+        .profile-img {
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            background-color: var(--accent-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
+            border: 5px solid var(--light-color);
             margin-bottom: 1rem;
-            border: 5px solid white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
         }
         
         h1 {
@@ -69,65 +58,100 @@
         .tagline {
             font-size: 1.2rem;
             opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        
+        nav {
+            background-color: var(--dark-color);
+            padding: 1rem 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav li {
+            margin: 0 15px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--secondary-color);
         }
         
         section {
-            padding: 3rem 1rem;
+            padding: 4rem 0;
         }
         
-        .section-title {
+        section:nth-child(even) {
+            background-color: white;
+        }
+        
+        h2 {
             text-align: center;
             margin-bottom: 2rem;
             color: var(--primary-color);
             position: relative;
         }
         
-        .section-title:after {
+        h2::after {
             content: '';
             display: block;
-            width: 50px;
+            width: 70px;
             height: 3px;
-            background-color: var(--accent-color);
-            margin: 0.5rem auto;
+            background-color: var(--secondary-color);
+            margin: 10px auto;
         }
         
-        .about {
-            background-color: white;
-            border-radius: 8px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            margin-bottom: 2rem;
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem;
         }
         
-        .skills {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 1.5rem;
-            margin-top: 2rem;
         }
         
         .skill-card {
             background-color: white;
             border-radius: 8px;
             padding: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            transition: transform 0.3s;
         }
         
         .skill-card:hover {
             transform: translateY(-5px);
         }
         
-        .skill-card h3 {
-            color: var(--accent-color);
+        .skill-card i {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
             margin-bottom: 1rem;
         }
         
-        .projects {
-            background-color: var(--light-color);
-        }
-        
-        .project-grid {
+        .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2rem;
@@ -137,84 +161,86 @@
             background-color: white;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
         }
         
         .project-card:hover {
             transform: translateY(-5px);
         }
         
-        .project-image {
-            height: 180px;
-            background-color: var(--secondary-color);
+        .project-img {
+            width: 100%;
+            height: 200px;
+            background-color: var(--light-color);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--dark-color);
         }
         
         .project-content {
             padding: 1.5rem;
         }
         
-        .project-content h3 {
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-        
-        .project-tags {
+        .contact-info {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-        
-        .tag {
-            background-color: var(--light-color);
-            color: var(--secondary-color);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-        }
-        
-        .contact {
-            text-align: center;
-            background-color: var(--primary-color);
-            color: white;
-        }
-        
-        .contact-links {
-            display: flex;
             justify-content: center;
             gap: 2rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
+            margin-bottom: 2rem;
         }
         
-        .contact-link {
+        .contact-item {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s ease;
+            gap: 10px;
         }
         
-        .contact-link:hover {
-            color: var(--accent-color);
+        .contact-item i {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .social-link:hover {
+            background-color: var(--secondary-color);
         }
         
         footer {
-            background-color: var(--dark-color);
+            background-color: var(--primary-color);
             color: white;
             text-align: center;
-            padding: 1.5rem;
+            padding: 2rem 0;
         }
         
         @media (max-width: 768px) {
-            .skills, .project-grid {
-                grid-template-columns: 1fr;
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 5px 0;
             }
             
             h1 {
@@ -222,122 +248,120 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <div class="profile">
-                <div class="avatar">
-                    <!-- Iniciales de Ronaldo Mamani Quispe -->
-                    <span>RM</span>
-                </div>
-                <h1>Ronaldo Mamani Quispe</h1>
-                <p class="tagline">Desarrollador | Especialista en Tecnología</p>
-            </div>
+            <img src="https://via.placeholder.com/150" alt="Ronaldo Mamani Quispe" class="profile-img">
+            <h1>Ronaldo Mamani Quispe</h1>
+            <p class="tagline">Desarrollador Web | Estudiante de Ingeniería</p>
         </div>
     </header>
     
-    <section class="about-section">
+    <nav>
         <div class="container">
-            <h2 class="section-title">Sobre Mí</h2>
-            <div class="about">
-                <p>¡Hola! Soy Ronaldo Mamani Quispe, un desarrollador apasionado por la tecnología y la creación de soluciones innovadoras. Me encanta aprender nuevas tecnologías y enfrentar desafíos que me permitan crecer profesionalmente.</p>
-                <p>En esta página encontrarás información sobre mis habilidades, proyectos y formas de contactarme. ¡No dudes en ponerte en contacto si quieres colaborar en algún proyecto interesante!</p>
-            </div>
-            
-            <h2 class="section-title">Mis Habilidades</h2>
-            <div class="skills">
-                <div class="skill-card">
-                    <h3>Frontend</h3>
-                    <p>HTML, CSS, JavaScript, React</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Backend</h3>
-                    <p>Node.js, Python, Bases de datos</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Herramientas</h3>
-                    <p>Git, GitHub, VS Code, Figma</p>
+            <ul>
+                <li><a href="#about">Sobre Mí</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section id="about">
+        <div class="container">
+            <h2>Sobre Mí</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hola, soy Ronaldo Mamani Quispe, un apasionado desarrollador web con experiencia en la creación de sitios web modernos y responsivos. Actualmente estoy enfocado en expandir mis conocimientos en tecnologías web y desarrollo de software.</p>
+                    <p>Me encanta aprender nuevas tecnologías y enfrentar desafíos que me permitan crecer profesionalmente. Siempre busco oportunidades para colaborar en proyectos interesantes y trabajar en equipo para alcanzar objetivos comunes.</p>
                 </div>
             </div>
         </div>
     </section>
     
-    <section class="projects">
+    <section id="skills">
         <div class="container">
-            <h2 class="section-title">Mis Proyectos</h2>
-            <div class="project-grid">
+            <h2>Mis Habilidades</h2>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Desarrollo Frontend</h3>
+                    <p>HTML5, CSS3, JavaScript, React</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-server"></i>
+                    <h3>Desarrollo Backend</h3>
+                    <p>Node.js, Express, MongoDB</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Diseño Web</h3>
+                    <p>UI/UX, Responsive Design, Figma</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="projects">
+        <div class="container">
+            <h2>Mis Proyectos</h2>
+            <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-image">
-                        <span>Proyecto 1</span>
+                    <div class="project-img">
+                        <i class="fas fa-shopping-cart fa-3x"></i>
                     </div>
                     <div class="project-content">
-                        <h3>Mi Primer Proyecto</h3>
-                        <p>Descripción breve del proyecto. Qué hace, qué tecnologías utiliza y qué problema resuelve.</p>
-                        <div class="project-tags">
-                            <span class="tag">HTML</span>
-                            <span class="tag">CSS</span>
-                            <span class="tag">JavaScript</span>
-                        </div>
+                        <h3>Tienda Online</h3>
+                        <p>Una aplicación web de comercio electrónico desarrollada con React y Node.js.</p>
                     </div>
                 </div>
-                
                 <div class="project-card">
-                    <div class="project-image">
-                        <span>Proyecto 2</span>
+                    <div class="project-img">
+                        <i class="fas fa-blog fa-3x"></i>
                     </div>
                     <div class="project-content">
-                        <h3>Mi Segundo Proyecto</h3>
-                        <p>Descripción breve del proyecto. Qué hace, qué tecnologías utiliza y qué problema resuelve.</p>
-                        <div class="project-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Node.js</span>
-                            <span class="tag">MongoDB</span>
-                        </div>
+                        <h3>Blog Personal</h3>
+                        <p>Un blog personal creado con HTML, CSS y JavaScript con sistema de comentarios.</p>
                     </div>
                 </div>
-                
                 <div class="project-card">
-                    <div class="project-image">
-                        <span>Proyecto 3</span>
+                    <div class="project-img">
+                        <i class="fas fa-tasks fa-3x"></i>
                     </div>
                     <div class="project-content">
-                        <h3>Mi Tercer Proyecto</h3>
-                        <p>Descripción breve del proyecto. Qué hace, qué tecnologías utiliza y qué problema resuelve.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Django</span>
-                            <span class="tag">PostgreSQL</span>
-                        </div>
+                        <h3>Aplicación de Tareas</h3>
+                        <p>Una aplicación para gestionar tareas diarias con funcionalidades de recordatorio.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <section class="contact">
+    <section id="contact">
         <div class="container">
-            <h2 class="section-title">Contacto</h2>
-            <p>¿Tienes un proyecto en mente? ¡Hablemos!</p>
-            <div class="contact-links">
-                <a href="https://github.com/20Ronaldo" class="contact-link" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                    <span>GitHub</span>
-                </a>
-                <a href="mailto:ronaldo.mamani@ejemplo.com" class="contact-link">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/>
-                    </svg>
-                    <span>Email</span>
-                </a>
-                <a href="https://linkedin.com/in/ronaldo-mamani-quispe" class="contact-link" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
-                    <span>LinkedIn</span>
-                </a>
+            <h2>Contacto</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>ronaldo.mamani@example.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+51 987 654 321</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Lima, Perú</span>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
     </section>
