@@ -183,6 +183,65 @@
             padding: 1.5rem;
         }
         
+        .tareas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .tarea-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        .tarea-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .tarea-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .tarea-icon {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+        
+        .tarea-title {
+            margin: 0;
+            color: var(--dark-color);
+            font-size: 1.1rem;
+        }
+        
+        .tarea-desc {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        
+        .descargar-btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+        
+        .descargar-btn:hover {
+            background-color: #2980b9;
+        }
+        
         .contact-info {
             display: flex;
             flex-wrap: wrap;
@@ -246,6 +305,10 @@
             h1 {
                 font-size: 2rem;
             }
+            
+            .tareas-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -265,6 +328,7 @@
                 <li><a href="#about">Sobre Mí</a></li>
                 <li><a href="#skills">Habilidades</a></li>
                 <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#tareas">Tareas Académicas</a></li>
                 <li><a href="#cv">Currículum</a></li>
                 <li><a href="#contact">Contacto</a></li>
             </ul>
@@ -341,7 +405,100 @@
         </div>
     </section>
     
-    <section id="cv" style="padding: 4rem 0; background-color: #f8f9fa;">
+    <!-- NUEVA SECCIÓN DE TAREAS ACADÉMICAS -->
+    <section id="tareas" style="padding: 4rem 0; background-color: #f8f9fa;">
+        <div class="container">
+            <h2>Tareas Académicas</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #666;">
+                Portafolio de trabajos y tareas realizadas durante mi formación académica
+            </p>
+            
+            <div class="tareas-grid">
+                <!-- Tarea 1 -->
+                <div class="tarea-card">
+                    <div class="tarea-header">
+                        <i class="fas fa-file-code tarea-icon"></i>
+                        <h3 class="tarea-title">Tarea de Programación</h3>
+                    </div>
+                    <p class="tarea-desc">Algoritmos y estructuras de datos en Java. Implementación de listas enlazadas y árboles binarios.</p>
+                    <a href="tareas/programacion/tarea1.pdf" class="descargar-btn" target="_blank">
+                        <i class="fas fa-download"></i> Descargar PDF
+                    </a>
+                </div>
+                
+                <!-- Tarea 2 -->
+                <div class="tarea-card">
+                    <div class="tarea-header">
+                        <i class="fas fa-calculator tarea-icon"></i>
+                        <h3 class="tarea-title">Tarea de Matemáticas</h3>
+                    </div>
+                    <p class="tarea-desc">Cálculo diferencial e integral. Problemas de optimización y aplicaciones de derivadas.</p>
+                    <a href="tareas/matematicas/tarea1.pdf" class="descargar-btn" target="_blank">
+                        <i class="fas fa-download"></i> Descargar PDF
+                    </a>
+                </div>
+                
+                <!-- Tarea 3 -->
+                <div class="tarea-card">
+                    <div class="tarea-header">
+                        <i class="fas fa-database tarea-icon"></i>
+                        <h3 class="tarea-title">Tarea de Base de Datos</h3>
+                    </div>
+                    <p class="tarea-desc">Diseño e implementación de base de datos relacional. Modelo entidad-relación y SQL.</p>
+                    <a href="tareas/basedatos/tarea1.pdf" class="descargar-btn" target="_blank">
+                        <i class="fas fa-download"></i> Descargar PDF
+                    </a>
+                </div>
+                
+                <!-- Tarea 4 -->
+                <div class="tarea-card">
+                    <div class="tarea-header">
+                        <i class="fas fa-network-wired tarea-icon"></i>
+                        <h3 class="tarea-title">Tarea de Redes</h3>
+                    </div>
+                    <p class="tarea-desc">Configuración de redes LAN y protocolos de comunicación. Modelo OSI y TCP/IP.</p>
+                    <a href="tareas/redes/tarea1.pdf" class="descargar-btn" target="_blank">
+                        <i class="fas fa-download"></i> Descargar PDF
+                    </a>
+                </div>
+                
+                <!-- Tarea 5 -->
+                <div class="tarea-card">
+                    <div class="tarea-header">
+                        <i class="fas fa-mobile-alt tarea-icon"></i>
+                        <h3 class="tarea-title">Tarea de Desarrollo Móvil</h3>
+                    </div>
+                    <p class="tarea-desc">Aplicación Android con Kotlin. Interfaz de usuario y consumo de API REST.</p>
+                    <a href="tareas/movil/tarea1.pdf" class="descargar-btn" target="_blank">
+                        <i class="fas fa-download"></i> Descargar PDF
+                    </a>
+                </div>
+                
+                <!-- Tarea 6 -->
+                <div class="tarea-card">
+                    <div class="tarea-header">
+                        <i class="fas fa-shield-alt tarea-icon"></i>
+                        <h3 class="tarea-title">Tarea de Seguridad</h3>
+                    </div>
+                    <p class="tarea-desc">Análisis de vulnerabilidades y medidas de protección. Criptografía y protocolos seguros.</p>
+                    <a href="tareas/seguridad/tarea1.pdf" class="descargar-btn" target="_blank">
+                        <i class="fas fa-download"></i> Descargar PDF
+                    </a>
+                </div>
+                
+                <!-- Puedes agregar más tareas siguiendo el mismo patrón -->
+                
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <p style="color: #666; font-style: italic;">
+                    Mostrando 6 de 18 tareas académicas completadas
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="cv" style="padding: 4rem 0; background-color: white;">
         <div class="container">
             <h2>Mi Currículum</h2>
             <div style="text-align: center; margin-top: 2rem;">
@@ -375,7 +532,7 @@
                 </div>
             </div>
             <div class="social-links">
-                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/20ronaldo" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
                 <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                 <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                 <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
