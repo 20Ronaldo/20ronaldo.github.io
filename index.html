@@ -11,6 +11,8 @@
             --accent-color: #e74c3c;
             --light-color: #ecf0f1;
             --dark-color: #34495e;
+            --r-color: #276dc2;
+            --latex-color: #008080;
         }
         
         * {
@@ -70,10 +72,11 @@
             display: flex;
             justify-content: center;
             list-style: none;
+            flex-wrap: wrap;
         }
         
         nav li {
-            margin: 0 15px;
+            margin: 0 10px;
         }
         
         nav a {
@@ -183,53 +186,74 @@
             padding: 1.5rem;
         }
         
-        .tareas-grid {
+        .r-latex-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 1.5rem;
             margin-top: 2rem;
         }
         
-        .tarea-card {
+        .r-card {
             background-color: white;
             border-radius: 8px;
             padding: 1.5rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
-            border-left: 4px solid var(--secondary-color);
+            border-left: 4px solid var(--r-color);
         }
         
-        .tarea-card:hover {
+        .latex-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            border-left: 4px solid var(--latex-color);
+        }
+        
+        .r-card:hover, .latex-card:hover {
             transform: translateY(-5px);
         }
         
-        .tarea-header {
+        .card-header {
             display: flex;
             align-items: center;
             margin-bottom: 1rem;
         }
         
-        .tarea-icon {
-            color: var(--secondary-color);
+        .r-icon {
+            color: var(--r-color);
             font-size: 1.5rem;
             margin-right: 10px;
         }
         
-        .tarea-title {
+        .latex-icon {
+            color: var(--latex-color);
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+        
+        .card-title {
             margin: 0;
             color: var(--dark-color);
             font-size: 1.1rem;
         }
         
-        .tarea-desc {
+        .card-desc {
             color: #666;
             margin-bottom: 1rem;
             line-height: 1.5;
         }
         
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        
         .descargar-btn {
             display: inline-block;
-            background-color: var(--secondary-color);
             color: white;
             padding: 0.5rem 1rem;
             border-radius: 4px;
@@ -238,8 +262,28 @@
             transition: background-color 0.3s;
         }
         
-        .descargar-btn:hover {
-            background-color: #2980b9;
+        .btn-r {
+            background-color: var(--r-color);
+        }
+        
+        .btn-r:hover {
+            background-color: #1a4d8c;
+        }
+        
+        .btn-latex {
+            background-color: var(--latex-color);
+        }
+        
+        .btn-latex:hover {
+            background-color: #006666;
+        }
+        
+        .btn-pdf {
+            background-color: var(--accent-color);
+        }
+        
+        .btn-pdf:hover {
+            background-color: #c0392b;
         }
         
         .contact-info {
@@ -306,8 +350,12 @@
                 font-size: 2rem;
             }
             
-            .tareas-grid {
+            .r-latex-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .btn-group {
+                flex-direction: column;
             }
         }
     </style>
@@ -327,8 +375,9 @@
             <ul>
                 <li><a href="#about">Sobre Mí</a></li>
                 <li><a href="#skills">Habilidades</a></li>
-                <li><a href="#projects">Proyectos</a></li>
-                <li><a href="#tareas">Tareas Académicas</a></li>
+                <li><a href="#projects">Proyectos Web</a></li>
+                <li><a href="#r-projects">Códigos R</a></li>
+                <li><a href="#latex-projects">Documentación</a></li>
                 <li><a href="#cv">Currículum</a></li>
                 <li><a href="#contact">Contacto</a></li>
             </ul>
@@ -372,7 +421,7 @@
     
     <section id="projects">
         <div class="container">
-            <h2>Mis Proyectos</h2>
+            <h2>Proyectos Web</h2>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-img">
@@ -405,100 +454,115 @@
         </div>
     </section>
     
-    <!-- NUEVA SECCIÓN DE TAREAS ACADÉMICAS -->
-    <section id="tareas" style="padding: 4rem 0; background-color: #f8f9fa;">
+    <!-- SECCIÓN SEPARADA PARA CÓDIGOS R -->
+    <section id="r-projects" style="padding: 4rem 0; background-color: #f8f9fa;">
         <div class="container">
-            <h2>Tareas Académicas</h2>
+            <h2>Códigos R</h2>
             <p style="text-align: center; margin-bottom: 2rem; color: #666;">
-                Portafolio de trabajos y tareas realizadas durante mi formación académica
+                Scripts y programas en R para análisis de datos, estadística y visualización
             </p>
             
-            <div class="tareas-grid">
-                <!-- Tarea 1 -->
-                <div class="tarea-card">
-                    <div class="tarea-header">
-                        <i class="fas fa-file-code tarea-icon"></i>
-                        <h3 class="tarea-title">Tarea de Programación</h3>
+            <div class="r-latex-grid">
+                <!-- Proyecto R 1 -->
+                <div class="r-card">
+                    <div class="card-header">
+                        <i class="fas fa-chart-line r-icon"></i>
+                        <h3 class="card-title">Análisis Estadístico</h3>
                     </div>
-                    <p class="tarea-desc">Algoritmos y estructuras de datos en Java. Implementación de listas enlazadas y árboles binarios.</p>
-                    <a href="tareas/programacion/tarea1.pdf" class="descargar-btn" target="_blank">
-                        <i class="fas fa-download"></i> Descargar PDF
-                    </a>
+                    <p class="card-desc">Script en R para análisis descriptivo e inferencial. Incluye pruebas estadísticas y generación de gráficos.</p>
+                    <div class="btn-group">
+                        <a href="proyectosR/r/analisis_estadistico.R" class="descargar-btn btn-r" target="_blank">
+                            <i class="fab fa-r-project"></i> Descargar Código R
+                        </a>
+                    </div>
                 </div>
                 
-                <!-- Tarea 2 -->
-                <div class="tarea-card">
-                    <div class="tarea-header">
-                        <i class="fas fa-calculator tarea-icon"></i>
-                        <h3 class="tarea-title">Tarea de Matemáticas</h3>
+                <!-- Proyecto R 2 -->
+                <div class="r-card">
+                    <div class="card-header">
+                        <i class="fas fa-database r-icon"></i>
+                        <h3 class="card-title">Minería de Datos</h3>
                     </div>
-                    <p class="tarea-desc">Cálculo diferencial e integral. Problemas de optimización y aplicaciones de derivadas.</p>
-                    <a href="tareas/matematicas/tarea1.pdf" class="descargar-btn" target="_blank">
-                        <i class="fas fa-download"></i> Descargar PDF
-                    </a>
+                    <p class="card-desc">Código para procesamiento y análisis de grandes conjuntos de datos con técnicas de machine learning.</p>
+                    <div class="btn-group">
+                        <a href="proyectosR/r/mineria_datos.R" class="descargar-btn btn-r" target="_blank">
+                            <i class="fab fa-r-project"></i> Descargar Código R
+                        </a>
+                    </div>
                 </div>
                 
-                <!-- Tarea 3 -->
-                <div class="tarea-card">
-                    <div class="tarea-header">
-                        <i class="fas fa-database tarea-icon"></i>
-                        <h3 class="tarea-title">Tarea de Base de Datos</h3>
+                <!-- Proyecto R 3 -->
+                <div class="r-card">
+                    <div class="card-header">
+                        <i class="fas fa-chart-bar r-icon"></i>
+                        <h3 class="card-title">Visualización Avanzada</h3>
                     </div>
-                    <p class="tarea-desc">Diseño e implementación de base de datos relacional. Modelo entidad-relación y SQL.</p>
-                    <a href="tareas/basedatos/tarea1.pdf" class="descargar-btn" target="_blank">
-                        <i class="fas fa-download"></i> Descargar PDF
-                    </a>
-                </div>
-                
-                <!-- Tarea 4 -->
-                <div class="tarea-card">
-                    <div class="tarea-header">
-                        <i class="fas fa-network-wired tarea-icon"></i>
-                        <h3 class="tarea-title">Tarea de Redes</h3>
+                    <p class="card-desc">Script para creación de gráficos interactivos y dashboards con ggplot2 y Shiny.</p>
+                    <div class="btn-group">
+                        <a href="proyectosR/r/visualizacion.R" class="descargar-btn btn-r" target="_blank">
+                            <i class="fab fa-r-project"></i> Descargar Código R
+                        </a>
                     </div>
-                    <p class="tarea-desc">Configuración de redes LAN y protocolos de comunicación. Modelo OSI y TCP/IP.</p>
-                    <a href="tareas/redes/tarea1.pdf" class="descargar-btn" target="_blank">
-                        <i class="fas fa-download"></i> Descargar PDF
-                    </a>
                 </div>
-                
-                <!-- Tarea 5 -->
-                <div class="tarea-card">
-                    <div class="tarea-header">
-                        <i class="fas fa-mobile-alt tarea-icon"></i>
-                        <h3 class="tarea-title">Tarea de Desarrollo Móvil</h3>
-                    </div>
-                    <p class="tarea-desc">Aplicación Android con Kotlin. Interfaz de usuario y consumo de API REST.</p>
-                    <a href="tareas/movil/tarea1.pdf" class="descargar-btn" target="_blank">
-                        <i class="fas fa-download"></i> Descargar PDF
-                    </a>
-                </div>
-                
-                <!-- Tarea 6 -->
-                <div class="tarea-card">
-                    <div class="tarea-header">
-                        <i class="fas fa-shield-alt tarea-icon"></i>
-                        <h3 class="tarea-title">Tarea de Seguridad</h3>
-                    </div>
-                    <p class="tarea-desc">Análisis de vulnerabilidades y medidas de protección. Criptografía y protocolos seguros.</p>
-                    <a href="tareas/seguridad/tarea1.pdf" class="descargar-btn" target="_blank">
-                        <i class="fas fa-download"></i> Descargar PDF
-                    </a>
-                </div>
-                
-                <!-- Puedes agregar más tareas siguiendo el mismo patrón -->
-                
-            </div>
-            
-            <div style="text-align: center; margin-top: 2rem;">
-                <p style="color: #666; font-style: italic;">
-                    Mostrando 6 de 18 tareas académicas completadas
-                </p>
             </div>
         </div>
     </section>
     
-    <section id="cv" style="padding: 4rem 0; background-color: white;">
+    <!-- SECCIÓN SEPARADA PARA DOCUMENTACIÓN LaTeX -->
+    <section id="latex-projects" style="padding: 4rem 0; background-color: white;">
+        <div class="container">
+            <h2>Documentación Técnica</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #666;">
+                Manuales, explicaciones y documentación en PDF sobre el uso y funcionamiento de los códigos R
+            </p>
+            
+            <div class="r-latex-grid">
+                <!-- Documentación LaTeX 1 -->
+                <div class="latex-card">
+                    <div class="card-header">
+                        <i class="fas fa-file-alt latex-icon"></i>
+                        <h3 class="card-title">Manual de Análisis Estadístico</h3>
+                    </div>
+                    <p class="card-desc">Documentación completa que explica cómo usar el código R de análisis estadístico, interpretar resultados y personalizar parámetros.</p>
+                    <div class="btn-group">
+                        <a href="proyectosR/latex/manual_analisis.pdf" class="descargar-btn btn-latex" target="_blank">
+                            <i class="fas fa-file-pdf"></i> Ver Documentación
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Documentación LaTeX 2 -->
+                <div class="latex-card">
+                    <div class="card-header">
+                        <i class="fas fa-book latex-icon"></i>
+                        <h3 class="card-title">Guía de Minería de Datos</h3>
+                    </div>
+                    <p class="card-desc">Explicación detallada del proceso de minería de datos, metodologías utilizadas y ejemplos prácticos de aplicación.</p>
+                    <div class="btn-group">
+                        <a href="proyectosR/latex/guia_mineria.pdf" class="descargar-btn btn-latex" target="_blank">
+                            <i class="fas fa-file-pdf"></i> Ver Documentación
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Documentación LaTeX 3 -->
+                <div class="latex-card">
+                    <div class="card-header">
+                        <i class="fas fa-graduation-cap latex-icon"></i>
+                        <h3 class="card-title">Tutorial de Visualización</h3>
+                    </div>
+                    <p class="card-desc">Tutorial paso a paso para crear visualizaciones avanzadas en R, incluyendo ejemplos y mejores prácticas.</p>
+                    <div class="btn-group">
+                        <a href="proyectosR/latex/tutorial_visualizacion.pdf" class="descargar-btn btn-pdf" target="_blank">
+                            <i class="fas fa-file-pdf"></i> Ver Tutorial
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="cv" style="padding: 4rem 0; background-color: #f8f9fa;">
         <div class="container">
             <h2>Mi Currículum</h2>
             <div style="text-align: center; margin-top: 2rem;">
