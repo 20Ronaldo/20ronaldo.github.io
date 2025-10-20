@@ -90,6 +90,38 @@
             color: #ffd700;
         }
 
+        .pdf-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .pdf-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .pdf-item:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+        }
+
+        .pdf-item a {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .pdf-item a:hover {
+            color: #fff;
+        }
+
         .skills {
             display: flex;
             flex-wrap: wrap;
@@ -182,6 +214,10 @@
             .contact-links {
                 flex-direction: column;
             }
+
+            .pdf-list {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -195,6 +231,46 @@
         <section class="section">
             <h2>📖 Sobre Mí</h2>
             <p>Apasionado por la tecnología y el desarrollo web. Me encanta crear soluciones innovadoras y aprender nuevas tecnologías. Siempre buscando mejorar mis habilidades y enfrentar nuevos desafíos.</p>
+        </section>
+
+        <section class="section">
+            <h2>📚 Mis Trabajos en PDF</h2>
+            <p>Aquí puedes encontrar mis trabajos académicos y proyectos documentados en formato PDF. Haz clic en cada uno para descargar o ver.</p>
+            <div class="pdf-list">
+                <div class="pdf-item">
+                    <a href="Autor Referente.pdf" target="_blank">📄 Autor Referente</a>
+                    <p>Referencia de autor principal.</p>
+                </div>
+                <div class="pdf-item">
+                    <a href="CTIVita.pdf" target="_blank">📄 CTI Vita</a>
+                    <p>Vitae en contexto de CTI.</p>
+                </div>
+                <div class="pdf-item">
+                    <a href="Hipótesis Pruebas.pdf" target="_blank">📄 Hipótesis Pruebas</a>
+                    <p>Análisis de hipótesis y pruebas.</p>
+                </div>
+                <div class="pdf-item">
+                    <a href="Lógica Caramelos.pdf" target="_blank">📄 Lógica Caramelos</a>
+                    <p>Exploración lógica con caramelos.</p>
+                </div>
+                <div class="pdf-item">
+                    <a href="Teorema del Límite Central.pdf" target="_blank">📄 Teorema del Límite Central</a>
+                    <p>Explicación del teorema central del límite.</p>
+                </div>
+                <div class="pdf-item">
+                    <a href="Técnicas de Escalado.pdf" target="_blank">📄 Técnicas de Escalado</a>
+                    <p>Métodos de escalado en análisis.</p>
+                </div>
+                <div class="pdf-item">
+                    <a href="introduccion R.pdf" target="_blank">📄 Introducción R</a>
+                    <p>Introducción al lenguaje R.</p>
+                </div>
+                <div class="pdf-item">
+                    <a href="tarea est.pdf" target="_blank">📄 Tarea Est</a>
+                    <p>Tarea de estadística.</p>
+                </div>
+                <!-- Agrega más PDFs aquí si tienes nombres completos para los truncados, como "Revisión e interpretación de Pruebas.pdf" o "Simulación de Números Pseudorandom.pdf" -->
+            </div>
         </section>
 
         <section class="section">
